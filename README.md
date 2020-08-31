@@ -7,19 +7,19 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <img src="https://wac-cdn.atlassian.com/dam/jcr:fd5bfb32-1640-4806-add6-760d7c33b57c/Crowd@2x-blue.png?cdnVersion=1209" alt="Logo" height="60">
+    <img src="https://wac-cdn.atlassian.com/dam/jcr:fd5bfb32-1640-4806-add6-760d7c33b57c/Crowd@2x-blue.png?cdnVersion=1209" alt="Logo" height="60">
 
-  <h3 align="center">atlassian/crowd</h3>
+    <h3 align="center">atlassian/crowd</h3>
 
-  <p align="center">
-    Docker setup for crowd
-    <br />
-    <br />
-    ·
-    <a href="https://github.com/beuluis/atlassian-crowd/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/beuluis/atlassian-crowd/issues">Request Feature</a>
-  </p>
+    <p align="center">
+        Docker setup for crowd
+        <br />
+        <br />
+        ·
+        <a href="https://github.com/beuluis/atlassian-crowd/issues">Report Bug</a>
+        ·
+        <a href="https://github.com/beuluis/atlassian-crowd/issues">Request Feature</a>
+    </p>
 </p>
 
 <!-- ABOUT THE PROJECT -->

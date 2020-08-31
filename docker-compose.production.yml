@@ -1,0 +1,40 @@
+# To be tested
+version: "3.7"
+services:
+    atlassian-crowd:
+        container_name: atlassianCrowdProd
+
+        environment:
+            VIRTUAL_HOST: crowd.luisbeu.de
+            VIRTUAL_PORT: 8095
+            LETSENCRYPT_HOST: crowd.luisbeu.de
+            ATL_PROXY_NAME: crowd.luisbeu.de
+            ATL_PROXY_PORT: 443
+            ATL_TOMCAT_SECURE: 1
+
+            networks:
+                - default
+                - nginxproxynet
+
+        ports:
+            - 8095
+
+    postgres:
+        ports:
+            - 5432
+
+        container_name: atlassianCrowdPostgresqlProd
+
+        environment:
+            FORCE_COLOR: 1
+            POSTGRES_USER: atlassianCrowdProd
+            POSTGRES_PASSWORD_FILE: /run/secrets/postgresPassword
+            POSTGRES_DB: atlassianCrowdProd
+
+secrets:
+    postgresPassword:
+        external: true
+
+networks:
+    nginxproxynet:
+        external: true

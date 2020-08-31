@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+    atlassian-crowd:
+        container_name: atlassianCrowdDev
+
+        environment:
+            FORCE_COLOR: 1
+
+        ports:
+            - 8095:8095
+
+    postgres:
+        ports:
+            - 5432
+
+        container_name: atlassianCrowdPostgresqlDev
+
+        environment:
+            FORCE_COLOR: 1
+            POSTGRES_USER: atlassianCrowdDev
+            POSTGRES_PASSWORD: ht6fBpAe6fJdz8c72H8y98
+            POSTGRES_DB: atlassianCrowdDev

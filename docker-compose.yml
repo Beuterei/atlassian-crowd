@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+    atlassian-crowd:
+        image: atlassian/crowd:4.1.1
+
+        deploy:
+            resources:
+              limits:
+                memory: 2G
+
+        networks:
+            - default
+
+        depends_on:
+            - postgres
+
+        restart: always
+
+        volumes:
+            - atlassianCrowdData:/var/atlassian/application-data/crowd
+
+        environment:
+            JVM_MINIMUM_MEMORY: 384m
+            JVM_MAXIMUM_MEMORY: 768m
+
+    postgres:
+        image: postgres:12.4-alpine
+
+        networks:
+            - default
+
+        restart: always
+
+        volumes:
+            - ./databaseEntrypoint:/docker-entrypoint-initdb.d
+            - atlassianCrowdPostgresqlData:/var/lib/postgresql/data
+
+volumes:
+    atlassianCrowdData: {}
+    atlassianCrowdPostgresqlData: {}

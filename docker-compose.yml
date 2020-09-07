@@ -6,7 +6,7 @@ services:
         deploy:
             resources:
               limits:
-                memory: 2G
+                memory: ${CROWD_MEMORY-2G}
 
         networks:
             - default
@@ -20,8 +20,8 @@ services:
             - atlassianCrowdData:/var/atlassian/application-data/crowd
 
         environment:
-            JVM_MINIMUM_MEMORY: 384m
-            JVM_MAXIMUM_MEMORY: 768m
+            JVM_MINIMUM_MEMORY: ${CROWD_JVM_MINIMUM_MEMORY-384m}
+            JVM_MAXIMUM_MEMORY: ${CROWD_JVM_MAXIMUM_MEMORY-768m}
 
     postgres:
         image: postgres:12.4-alpine

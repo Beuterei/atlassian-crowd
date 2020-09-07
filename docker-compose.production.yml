@@ -5,10 +5,10 @@ services:
         container_name: atlassianCrowdProd
 
         environment:
-            VIRTUAL_HOST: crowd.luisbeu.de
+            VIRTUAL_HOST: ${HOST:?Missing environment variable see readme}
             VIRTUAL_PORT: 8095
-            LETSENCRYPT_HOST: crowd.luisbeu.de
-            ATL_PROXY_NAME: crowd.luisbeu.de
+            LETSENCRYPT_HOST: ${HOST:?Missing environment variable see readme}
+            ATL_PROXY_NAME: ${HOST:?Missing environment variable see readme}
             ATL_PROXY_PORT: 443
             ATL_TOMCAT_SECURE: 1
 
@@ -27,13 +27,9 @@ services:
 
         environment:
             FORCE_COLOR: 1
-            POSTGRES_USER: atlassianCrowdProd
-            POSTGRES_PASSWORD_FILE: /run/secrets/postgresPassword
-            POSTGRES_DB: atlassianCrowdProd
-
-secrets:
-    postgresPassword:
-        external: true
+            POSTGRES_USER: ${PG_USER-atlassianCrowdProd}
+            POSTGRES_PASSWORD: ${PG_PASSWORD:?Missing environment variable see readme}
+            POSTGRES_DB: ${PG_DB-atlassianCrowdProd}
 
 networks:
     nginxproxynet:

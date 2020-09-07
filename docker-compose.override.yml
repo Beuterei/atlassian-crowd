@@ -7,7 +7,7 @@ services:
             FORCE_COLOR: 1
 
         ports:
-            - 8095:8095
+            - ${PORT-8095}:8095
 
     postgres:
         ports:
@@ -17,6 +17,6 @@ services:
 
         environment:
             FORCE_COLOR: 1
-            POSTGRES_USER: atlassianCrowdDev
-            POSTGRES_PASSWORD: ht6fBpAe6fJdz8c72H8y98
-            POSTGRES_DB: atlassianCrowdDev
+            POSTGRES_USER: ${PG_USER-atlassianCrowdDev}
+            POSTGRES_PASSWORD: ${PG_PASSWORD-ht6fBpAe6fJdz8c72H8y98}
+            POSTGRES_DB: ${PG_DB-atlassianCrowdDev}

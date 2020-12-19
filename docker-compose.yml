@@ -36,5 +36,7 @@ services:
             - atlassianCrowdPostgresqlData:/var/lib/postgresql/data
 
 volumes:
-    atlassianCrowdData: {}
-    atlassianCrowdPostgresqlData: {}
+    atlassianCrowdData:
+        driver: local
+    atlassianCrowdPostgresqlData:
+        driver: local

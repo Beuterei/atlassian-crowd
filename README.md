@@ -121,7 +121,7 @@ touch .env.prod
 
 | Variable                   | Description                                                     | Default value        | Required |
 | -------------------------- | --------------------------------------------------------------- | -------------------- | -------- |
-| `PROXY_NETWORK_NAME` | Proxy network name                                              | `nginxproxynet` | false    |
+| `PROXY_NETWORK_NAME`       | Proxy network name                                              | `nginxproxynet`      | false    |
 | `CROWD_MEMORY`             | Defines how much memory the container can use                   | `2G`                 | false    |
 | `CROWD_JVM_MINIMUM_MEMORY` | The minimum heap size of the JVM                                | `384m`               | false    |
 | `CROWD_JVM_MAXIMUM_MEMORY` | The maximum heap size of the JVM                                | `768m`               | false    |
